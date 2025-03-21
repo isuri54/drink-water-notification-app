@@ -9,32 +9,30 @@ class WatchScreen extends StatefulWidget {
 }
 
 class _WatchScreenState extends State<WatchScreen> {
-  final String serverKey = '';
-  final String fcmEndpoint = 'https://fcm.googleapis.com/fcm/send';
+  final String backendUrl = 'http://localhost:5000/send-reminder';
 
   Future<void> sendReminder() async {
-    final String to = '/topics/water_reminder';
-    final Map<String, dynamic> data = {
-      'notification': {
-        'title': 'Time to Drink Water!',
-        'body': 'Stay hydrated and take a sip now!',
-      },
-      'to': to,
-    };
+    final String deviceToken = 'DEVICE_TOKEN';
 
-    final response = await http.post(
-      Uri.parse(fcmEndpoint),
-      headers: <String, String>{
-        'Content-Type': 'application/json',
-        'Authorization': 'key=$serverKey',
-      },
-      body: jsonEncode(data),
-    );
+    try {
+      
+      final response = await http.post(
+        Uri.parse(backendUrl),
+        headers: <String, String>{
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          'deviceToken': deviceToken,
+        }),
+      );
 
-    if (response.statusCode == 200) {
-      print('Reminder sent successfully');
-    } else {
-      print('Failed to send reminder: ${response.body}');
+      if (response.statusCode == 200) {
+        print('Reminder sent successfully');
+      } else {
+        print('Failed to send reminder: ${response.body}');
+      }
+    } catch (e) {
+      print('Error sending reminder: $e');
     }
   }
 
