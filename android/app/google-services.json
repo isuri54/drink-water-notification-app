@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1094113241094",
+    "project_id": "water-reminder-app-6b71d",
+    "storage_bucket": "water-reminder-app-6b71d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094113241094:android:36621ab114cf2e30247b87",
+        "android_client_info": {
+          "package_name": "com.example.watch_app_water"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8I5IDoOOTRkyEcfSEk7PEZlrQdXY1edA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094113241094:android:f5a77f97aafb4b67247b87",
+        "android_client_info": {
+          "package_name": "com.example.water_notification_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8I5IDoOOTRkyEcfSEk7PEZlrQdXY1edA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
